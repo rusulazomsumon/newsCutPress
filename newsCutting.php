@@ -1,241 +1,266 @@
 <?php 
     /* 
-        Template Name: News Cutting 
+        Template Name: NewsPress 3
         Template Post Type: post, page
     */ 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <title> দৈনিক সংবাদ চিত্র - সত্য ও ন্যায় প্রকাশে আপোষহীন </title>
-    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.3.2/dist/html2canvas.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.3/dist/css/bootstrap-icons.min.css">
+    <title><?php the_title(); ?></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.1/html2canvas.min.js"></script>
+    <link href="https://fonts.maateen.me/kalpurush/font.css" rel="stylesheet">
+    <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.3.2/dist/html2canvas.min.js"></script>
     <style>
-        @font-face {
-    font-family: "My Custom Font";
-    src: url("fonts/AgameeI.TTF") format("truetype");
-}
-body{
-    margin: 50px 30px 20px 30px;
-    padding: 10px;
-    font-family: "My Custom Font", sans-serif;
-    color:#3D3D3D;
-    background-color: #F5F5F5; 
-}
-.english {
-    font-family: 'Courier New', Courier, monospace;
-}
-/* header area */
-.header {
-    display: flex;
-}
+        /* ########Old Css########## */
+        body{
+        margin: 50px;
+        font-family: "My Custom Font", sans-serif;
+        color:#292929;
+        background-color: #FFFFFF; 
+        font-family: 'SolaimanLipi', Arial, sans-serif !important;
+        /* font-family: 'kalpurush', Arial, sans-serif !important; */
+        }
+        .english {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        /* header area */
+        .header {
+            display: flex;
+        }
 
-.image-section {
-    flex: 1;
-}
-.image-section img{
-    height: 150px;
-}
+        .image-section {
+            flex: 1;
+        }
+        .image-section img{
+            height: 150px;
+            padding: 0px 100px 0px 100px;
+        }
 
-/* promotional */
+        /* promotional */
 
-.promotional {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .promotional .english {
-    margin-right: 10px;
-  }
-  
-  .promotional .tagline {
-    margin-left: 10px;
-  }
+        .promotional {
+            margin-top: 10px;
+            text-align: center;
+            background-color: #F42A40;
+            }
+            
+            .promotional .tagline p{
+            padding: 1px;
+            /* font-family: 'SolaimanLipi', Arial, sans-serif !important; */
+            color: white;
+            font-size: 24px;
+            font-weight: 500;
+            }
 
-/* navigation area */
-.nav-area{
-    margin: 30px 0px 50px 0px;
-    text-align: center;
-    background-color: #006A4E;
-    color: #F7FEFD;
-}
+        /* navigation area */
+        .nav-area{
+            margin-top: 10px;
+            text-align: center;
+            background-color: #F9F0E2;
+            display: flex;  
+            justify-content: space-between;
+        }
 
-.nav-area p{
-    padding: 8px;
-    font-weight: 400;
-}
-
-/* main article */
-
-.article p {
-    column-count: 2; /* Set the number of columns */
-    column-gap: 20px; /* Set the gap between columns */
-    text-align: justify;
-    font-size: 20px;
-}
-
-.picture {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.image {
-    filter: grayscale(10%);
-}
-
-.sourse {
-    font-style: italic;
-    font-weight: bold;
-}
-
-/* my Addvertisement */
-.myAdd {
-    font-style: italic;
-    color: green;
-    text-align: center; 
-}
-
-/* footer area  */
-.footer {
-    text-align: center;
-    margin: 100px 0px 50px 0px;
-    font-weight: 600;
-
-}
-
-/* coursor */
-#screenshot-btn {
-  cursor: pointer;
-}
+        .nav-area p{
+            padding: 2px;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 16px;
+        }
 
 
-@media screen and (max-width: 768px) {
-    .article {
-        column-count: 1; /* Switch to a single column on smaller screens */
-    }
-}
+        /* footer area  */
+        .copyright {
+           padding: 0px 100px 0px 100px;       
+        }
+        .copyright p {
+            font-size: 22px;
+            font-weight: 500;
+            text-align: center;
+        }
+        .source{
+            font-size: 24px;
+            font-weight: 600;
+            font-style: italic;
+        }
+        /* old css end */
+
+        /* Custom CSS for newspaper-like view */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Main Content of Blog */
+        /* Define a two-column layout for content */
+        .multi-column {
+            column-count: 3;
+            column-gap: 20px;
+        }
+
+        .multi-column p {
+            text-align: justify;
+            font-size: 22px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        /* content images */
+        .multi-column img{
+            height: auto !important;
+            width: 100% !important;
+        }
+        /* post title area */
+        .postTitleArea {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        /* thumnails */
+            .postTitleArea img {
+            margin: 0;
+            }
+        /* title */
+            .postTitleArea .postTitle {
+            margin: 0;
+            /* font-family: 'SolaimanLipi', Arial, sans-serif !important; */
+            text-align: center;
+            font-weight: 900; 
+            margin: 10px 0pc 20px 0px;
+        }
+        
+        
     </style>
 </head>
 <body>
-    <div class="print-area">
+<div class="print-area">
         <div class="header">
-            <div class="image-section" style="width: 200px; padding-right: 20px;">
-              <img src="https://doiniksongbadchitro.com/wp-content/uploads/2023/06/bkash-eid-cashback-1.jpeg" alt="Image 1">
-            </div>
+            <!-- <div class="image-section">
+              <img src="./img/imageskjk.jpg" alt="Image 1">
+            </div> -->
             <div class="image-section">
-              <img style="width: 100%; " src="https://doiniksongbadchitro.com/wp-content/uploads/2023/06/doinik-songbad-chitro-national-logo-e1686597784367.jpg" alt="Image 2">
+              <img style="width: 100%;" src="https://doiniksongbadchitro.com/wp-content/uploads/2023/08/WhatsApp_Image_2023-08-01_at_13.02.00-removebg-preview.png" alt="Image 2">
             </div>
-            <div class="image-section">
-              <img  style="width: 80%; " src="https://doiniksongbadchitro.com/wp-content/uploads/2023/06/bd50_mujib100-1.jpg" alt="Image 3">
-            </div>
+            <!-- <div class="image-section">
+              <img  style=" margin-left: 150px;" src="./img/mujib100.png" alt="Image 3">
+            </div> -->
         </div>
 
-        <div class="promotional d-flex justify-content-between">
-            <span class="english">www.doiniksongbadchitro.com</span>
-            <span class="tagline">সত্য ও ন্যায় প্রকাশে আপোষহীন</span>
+        <div class="promotional ">
+            <span class="tagline"><p id="banglaDateTime"> </p> </span>
         </div>
         
-    
-        <div class="nav-area">
-            <p id="banglaDateTime"> </p>
+    <!-- feture links -->
+        <!-- <div class="nav-area english">
+            <p>www.doiniksongbadchitro.com</p>
+            <p>www.fb.com/doiniksongbadchitro</p>
+            <p>info@doiniksongbadchitro.com</p>
+        </div> -->
+    <!-- News Content Area -->
+    <div class="container">
+        <div class="row">
+            <div class="postTitleArea col-md-12">
+                <h1 class="postTitle"><?php the_title(); ?></h1> <br>
+                <!-- <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Thumbnail" style="margin-left: auto; margin-right: auto;"> -->
+                <!-- Display the post title -->
+            </div>
+            <div class="col-md-12">                
+                <!-- Display the post content in multiple columns -->
+                <div class="multi-column">
+                    <?php the_content(); ?>
+                </div>
+            </div>
         </div>
-          
-        <div class="article-continer">
-            <h1 style="text-align: center; font-size: 28px; font-weight: 600;"><?php the_title(); ?></h1>
-            <div class="picture">
-                <img class="image" style="width: 600px; height= 350px;" src="<?php echo get_the_post_thumbnail_url(); ?>" alt=""> 
-            </div>
-            <div class="article d-flex justify-content-around text-center"> 
-                <!-- <span class="sourse"> মোঃ সৌরভ ইসলাম, সাভার (ঢাকা) প্রতিনিধিঃ </span> -->
-                <?php the_content(); ?>
-            </div>
-            <div>
-              <img src="https://doiniksongbadchitro.com/wp-content/uploads/2023/07/doinik-songbadchitro-sangbadik-niyog.jpg" width="100%">
-            </div>
-        </div>
+    </div>
+    <!-- News Content Area End -->
+
+    <!-- Rest of Body Old Code -->
+    <div class="copyright">
+        <hr>
+            <!-- <img src="https://doiniksongbadchitro.com/wp-content/uploads/2023/07/doinik-songbadchitro-sangbadik-niyog.jpg" alt="" width="100%"> -->
+            <p class="author">  <span class=""> সম্পাদকঃমাহমুদুল হাসান মাহমুদ  সহ সম্পাদকঃ  মোঃ সোহাগ শেখ  (01686844527) | সহ সম্পাদক ও প্রকাশকঃ  মোঃ সৌরভ শেখ (01614949395)</p>
+            <p class="author">  <span class="">প্রধান কার্যালয়ঃ চিতলমারী, বাগেরহাট, খুলনা </p>
+            <p class="copy">  <span class="english">&copy;</span> ২০২৩ - দৈনিক সংবাদ চিত্র </p>
+            
+          </div>
     
         <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@FooterArea@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-        <div class="footer">
-            <hr>
-            <p class="author">  <span class=""> সম্পাদকঃমাহমুদুল হাসান মাহমুদ | সহ সম্পাদকঃ  মোঃ সোহাগ শেখ  (01686844527) | সহ সম্পাদক ও প্রকাশকঃ  মোঃ সৌরভ শেখ (01614949395)</p>
-           <p> ঠিকানাঃ ১৪/২৪ মদিনা ভিলা, মোহাম্মাদপুর, ঢাকা -১২০৭ </p>
-           <p> যোগাযোগঃ ০১৮৮২৮৩৪০৭১</p>
-           <p>  ইমেইলঃ <span class="english">news@doiniksongbadchitro.com</span> </p>
-           <p>  <span class="english">&copy;</span> ২০২৩ - দৈনিক সংবাদ চিত্র </p>
-        </div>
 
     </div>
     
-    <button id="screenshot-btn">@</button>
+   
+    <!-- <button id="screenshot-btn">@</button> -->
     <!-- <p class="myAdd">মাত্র <b> ২২২২ টাকায় </b> যে কোন ওয়েবসাইট বানাতে, যোগাযোগঃ ০১৮৮২৮৩৪০৭১</p> -->
 
     <script>
-        document.getElementById('screenshot-btn').addEventListener('click', function() {
-  html2canvas(document.body).then(function(canvas) {
-    // Create a temporary link
-    var link = document.createElement('a');
-    link.href = canvas.toDataURL();
+        // if double click on body ,then this action will run
+        document.body.addEventListener('dblclick', function() {
+        html2canvas(document.body).then(function(canvas) {
+        // Create a temporary link
+        var link = document.createElement('a');
+        link.href = canvas.toDataURL();
 
-    link.download = 'সংবাদচিত্র_newsCutting_' + getCurrentTime() + '.png';
+        link.download = 'সংবাদচিত্র_newsCutting_' + getCurrentTime() + '.png';
 
-    // Function to get current time as minutes and seconds
-    function getCurrentTime() {
-    var currentDate = new Date();
-    var minutes = currentDate.getMinutes().toString().padStart(2, '0');
-    var seconds = currentDate.getSeconds().toString().padStart(2, '0');
-    return minutes + ':' + seconds;
-    }
+        // Function to get current time as minutes and seconds
+        function getCurrentTime() {
+            var currentDate = new Date();
+            var minutes = currentDate.getMinutes().toString().padStart(2, '0');
+            var seconds = currentDate.getSeconds().toString().padStart(2, '0');
+            return minutes + ':' + seconds;
+        }
 
-    // Trigger the download
-    link.click();
-  });
-});
+            // Trigger the download
+            link.click();
+        });
+        });
 
-// @@@@@@@@@@@BanglaDate@@@@@@@@@@@@@@
- // Array of Bangla day names
-    const banglaDayNames = [
-        "রবিবার", "সোমবার", "মঙ্গলবার", "বুধবার",
-        "বৃহস্পতিবার", "শুক্রবার", "শনিবার"
-    ];
+        // @@@@@@@@@@@BanglaDate@@@@@@@@@@@@@@
+        // Array of Bangla day names
+        const banglaDayNames = [
+            "রবিবার", "সোমবার", "মঙ্গলবার", "বুধবার",
+            "বৃহস্পতিবার", "শুক্রবার", "শনিবার"
+        ];
 
-    // Get the current date
-    const currentDate = new Date();
+        // Get the current date
+        const currentDate = new Date();
 
-    // Set the options for Bengali calendar
-    const options = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        calendar: 'beng',
-        numberingSystem: 'beng'
-    };
+        // Set the options for Bengali calendar
+        const options = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            calendar: 'beng',
+            numberingSystem: 'beng'
+        };
 
-    // Format the date in the Bengali calendar
-    const formatter = new Intl.DateTimeFormat('bn-BD', options);
-    const formattedDate = formatter.format(currentDate);
+        // Format the date in the Bengali calendar
+        const formatter = new Intl.DateTimeFormat('bn-BD', options);
+        const formattedDate = formatter.format(currentDate);
 
-    // Get the day index (0-6)
-    const dayIndex = currentDate.getDay();
+        // Get the day index (0-6)
+        const dayIndex = currentDate.getDay();
 
-    // Get the corresponding Bangla day name
-    const banglaDayName = banglaDayNames[dayIndex];
+        // Get the corresponding Bangla day name
+        const banglaDayName = banglaDayNames[dayIndex];
 
-    // Display the Bangla day name and date
-    const banglaDateTimeElement = document.getElementById("banglaDateTime");
-    banglaDateTimeElement.textContent = 'প্রকাশের তারিখঃ ' +formattedDate+ ' | ই-পেপার ভার্সন  ';
+        // Display the Bangla day name and date
+        const banglaDateTimeElement = document.getElementById("banglaDateTime");
+        banglaDateTimeElement.textContent = ' প্রকাশের সময়ঃ ' +formattedDate+ ' | বর্ষঃ ১, পৃষ্ঠাঃ ১২,  | ই-পেপার ভার্সন | মূল্যঃ ফ্রি  ';
 
     </script>
 
+    <!-- Bootstrap JS and jQuery (optional) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-

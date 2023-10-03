@@ -6,16 +6,11 @@
     */ 
 ?>
 <!-- linking header -->
-    <?php get_header() ?>
+<?php get_header() ?>
 
-    <!-- M$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$((((((((((((Main News Slider Start)))))))))))))))) $$$$$$$$$$$$$$$$$$$$$$$$$-->
-    <div class="container-fluid">
-        <!-- ###############################Breaking News #################################### -->
-        <?php 
-            get_template_part('template-parts/pertials/content','nHeading'); 
-        ?>
-        <!-- Breaking News End -->
-        <div class="row">
+<!-- M$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$((((((((((((Main News Slider Start)))))))))))))))) $$$$$$$$$$$$$$$$$$$$$$$$$-->
+<div class="container-fluid">   
+     <div class="row">
             <div class="col-lg-7 px-0">
                 <div class="owl-carousel main-carousel position-relative">
                     <!-- post dynamicication -->

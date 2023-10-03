@@ -9824,3 +9824,87 @@ h6,
 #navbarCollapse .menu-main-menu-container #menu-main-menu-1 li{
   padding-left: 10px;
 }
+/* @@@@@@@@@@@@@@@@@@@@@BreakingNews@@@@@@@@@@@@@@@@@@@@@ */
+
+    .bk-news a{
+      color: #fff;
+      text-decoration: none
+    }
+    .bk-news{
+        overflow: hidden;
+        width: 100%;
+        font-family: 'SolaimanLipi', Arial, sans-serif !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #006A4E !important;
+        color: #fff;
+
+      }
+        
+      .bk-news .ticker{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 50px;
+            margin: 0 auto;
+        }
+        
+        .bk-news .title{
+            width: 20%;
+            text-align: center;
+            position: relative;
+        }
+        .bk-news .title {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100%; /* Ensure the div takes up the full height */
+        }
+
+        .bk-news .title h5 {
+            margin: 0; /* Remove default margin on h5 element */
+            padding-right: 5px;
+        }
+
+        /* .bk-news .title:after{
+            position: absolute;
+            content: "";
+            right: -22%;
+            border-left: 20px solid #c81c1c;
+            border-top: 28px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 21px solid transparent;
+            top: 0px;
+        } */
+        .bk-news .title h5{
+            color: white;
+            font-size: 18px;
+            margin: 5% 0;
+        }
+        .bk-news .news{
+          width: 80%;
+          padding: 0 2%
+        }
+        .bk-news .news marquee{
+            font-family: 'SolaimanLipi', Arial, sans-serif !important;
+            font-size: 18px;
+            margin-top: 12px;
+        }
+        .bk-news .news-content p{
+            margin-right: 41px;
+            display: inline;
+        }
+
+        /* Style for the Earth icon */
+        .earth-icon {
+          display: inline-block;
+          animation: earth-spin 5s linear infinite;
+        }
+
+        /* Keyframes for the Earth icon animation */
+        @keyframes earth-spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+

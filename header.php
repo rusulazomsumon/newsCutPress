@@ -34,6 +34,11 @@
                 </nav>
             </div>
         </div>
+        <div class="bk-news">
+            <?php 
+                get_template_part('template-parts/pertials/content','notice'); 
+            ?>
+        </div>
         <!-- Logo Area -->
         <div class="row align-items-center bg-white py-3 px-lg-5">
             <div class="col-lg-4 col-sm-12 text-center logo">
@@ -89,7 +94,16 @@
                     ?>
                 </div>
             </div>
+             
         </nav>
+        <!-- Navbar End -->
+        <!-- ###############################Breaking News #################################### -->
+        <div class="bk-news">
+            <?php 
+                get_template_part('template-parts/pertials/content','nHeading'); 
+            ?>
+        </div>
     </div>
-    <!-- Navbar End -->
-
+    
+ 
+       

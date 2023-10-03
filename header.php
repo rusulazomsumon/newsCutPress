@@ -21,57 +21,25 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <!-- Topbar Start -->
-    <div class="container-fluid d-none d-lg-block">
-        <div class="row align-items-center bg-dark px-lg-5">
-            <div class="col-lg-9">
-                <nav class="navbar navbar-expand-sm bg-dark p-0">
-                    <ul class="navbar-nav ml-n2">
-                        <li class="nav-item border-right border-secondary">
-                            <a class="nav-link text-body small" href="#">Monday, January 1, 2045</a>
-                        </li>
-                        <li class="nav-item border-right border-secondary">
-                            <a class="nav-link text-body small" href="#">Advertise</a>
-                        </li>
-                        <li class="nav-item border-right border-secondary">
-                            <a class="nav-link text-body small" href="#">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-body small" href="#">Login</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="col-lg-3 text-right d-none d-md-block">
-                <nav class="navbar navbar-expand-sm bg-dark p-0">
-                    <ul class="navbar-nav ml-auto mr-n2">
-                        <li class="nav-item">
-                            <a class="nav-link text-body" href="#"><small class="fab fa-twitter"></small></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-body" href="#"><small class="fab fa-facebook-f"></small></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-body" href="#"><small class="fab fa-linkedin-in"></small></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-body" href="#"><small class="fab fa-instagram"></small></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-body" href="#"><small class="fab fa-google-plus-g"></small></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-body" href="#"><small class="fab fa-youtube"></small></a>
-                        </li>
-                    </ul>
+    <!--@@@@@@@@ Topbar Start@@@@@@@@@ -->
+    <div >
+        <div class="row navArea align-items-center px-lg-5">
+            <div class="col-lg-12 text-center">
+                <nav class="col-lg-12 navbar navbar-expand-sm p-0">
+                <ul class="col-lg-12 navbar-nav ml-n2">
+                    <li class="col-lg-12 nav-item">
+                    <a class="nav-link text-body small" style="font-family: 'SolaimanLipi', Arial, sans-serif !important; font-size: 18px !important;" id="banglaDateTime" href="#"> </a>
+                    </li>
+                </ul>
                 </nav>
             </div>
         </div>
+        <!-- Logo Area -->
         <div class="row align-items-center bg-white py-3 px-lg-5">
-            <div class="col-lg-4 logo">
+            <div class="col-lg-4 col-sm-12 text-center logo">
                 <a href="<?php site_url(); ?>"><?php the_custom_logo(); ?></a>
             </div>
-            <div class="col-lg-8 text-center text-lg-right">
+            <div class="col-lg-8 d-none d-lg-block text-center text-lg-right">
                 <a href="https://rusulazom.me"><img class="img-fluid" src="https://doiniksongbadchitro.com/wp-content/uploads/2023/06/728x90-rasipm.jpg" alt=""></a>
             </div>
         </div>
@@ -81,51 +49,34 @@
 
     <!-- Navbar Start -->
     <div class="container-fluid p-0">
-        <nav class="navbar navbar-expand-lg bg-danger shadow-sm navbar-dark py-2 py-lg-0 px-lg-5">
-            <a href="index.html" class="navbar-brand d-block d-lg-none">
-                <div class="site-logo">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                        <?php
-                        // Check if the custom logo is supported
-                        if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
-                            the_custom_logo();
-                        } else {
-                            // Fallback to site title if no custom logo is set
-                            echo '<h1>' . get_bloginfo( 'name' ) . '</h1>';
-                        }
-                        ?>
-                    </a>
-                </div>
-            </a>
-            
+        <nav class="navbar navbar-expand-lg bg-danger shadow-sm navbar-dark py-2 py-lg-0 px-lg-5">  
             <!-- Button to trigger the mobile menu -->
-<button type="button" class="navbar-toggler" data-toggle="modal" data-target="#mobileMenuModal">
-  <span class="navbar-toggler-icon"></span>
-</button>
+            <button type="button" class="navbar-toggler col-sm-12" data-toggle="modal" data-target="#mobileMenuModal">
+            <span class="navbar-toggler-icon text-center"></span>
+            </button>
 
-<!-- Mobile menu modal -->
-<div class="modal fade" id="mobileMenuModal" tabindex="-1" role="dialog" aria-labelledby="mobileMenuModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="mobileMenuModalLabel">Menu</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <?php
-          // Display your WordPress main menu here
-          wp_nav_menu(array(
-            'theme_location' => 'main-menu',
-            'container' => false,
-            'menu_class' => 'mobile-menu',
-          ));
-        ?>
-      </div>
-    </div>
-  </div>
-</div>
+            <!-- Mobile menu modal -->
+            <div class="modal fade" id="mobileMenuModal" tabindex="-1" role="dialog" aria-labelledby="mobileMenuModalLabel" aria-hidden="true">
+            <div class="modal-dialog"  role="document">
+                <div class="modal-content mt-5" style="background-color: #006a4e !important;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" style="color: white !important;" id="mobileMenuModalLabel">মেনু</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" >
+                        <?php
+                        wp_nav_menu(array(
+                            'theme_location' => 'main-menu',
+                            'container' => false,
+                            'menu_class' => 'mobile-menu',
+                        ));
+                        ?>
+                    </div>
+                </div>
+            </div>
+            </div>
 
 
             <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
@@ -152,3 +103,4 @@
         </nav>
     </div>
     <!-- Navbar End -->
+

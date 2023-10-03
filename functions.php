@@ -3,6 +3,7 @@
     load_theme_textdomain('runbangla24', get_template_directory().'/languages');
 
     // dynamic site/page title
+    
     function runbangla24_setup(){
         add_theme_support('title-tag');
         add_theme_support('post-thumbnails',array('post'));
@@ -20,24 +21,88 @@
         *
         * @link https://codex.wordpress.org/Theme_Logo
         */
-        $logo_width  = 150;
-        $logo_height = 50;
+        // $logo_width  = 150;
+        // $logo_height = 50;
 
-        add_theme_support(
-            'custom-logo',
-            array(
-                'height'               => $logo_height,
-                'width'                => $logo_width,
-                'flex-width'           => true,
-                'flex-height'          => true,
-                'unlink-homepage-logo' => true,
-            )
-        );
+        // add_theme_support(
+        //     'custom-logo',
+        //     array(
+        //         'height'               => $logo_height,
+        //         'width'                => $logo_width,
+        //         'flex-width'           => true,
+        //         'flex-height'          => true,
+        //         'unlink-homepage-logo' => true,
+        //     )
+        // );
 
 
     }
     // hocks for title and others
     add_action('after_setup_theme','runbangla24_setup');
+    
+    // logo 
+    function my_customizer_logo_settings( $wp_customize ) {
+
+        $wp_customize->add_section(
+          'my_custom_logo_settings',
+          array(
+            'title' => __( 'My Custom Logo Settings', 'runbangla24' ),
+            'priority' => 30,
+          )
+        );
+      
+        $wp_customize->add_setting(
+          'my_custom_logo_width',
+          array(
+            'default' => 150,
+            'sanitize_callback' => 'sanitize_text_field',
+          )
+        );
+      
+        $wp_customize->add_setting(
+          'my_custom_logo_height',
+          array(
+            'default' => 50,
+            'sanitize_callback' => 'sanitize_text_field',
+          )
+        );
+      
+        $wp_customize->add_control(
+          'my_custom_logo_width_control',
+          array(
+            'label' => __( 'Logo Width', 'runbangla24' ),
+            'type' => 'text',
+            'section' => 'my_custom_logo_settings',
+            'settings' => 'my_custom_logo_width',
+          )
+        );
+      
+        $wp_customize->add_control(
+          'my_custom_logo_height_control',
+          array(
+            'label' => __( 'Logo Height', 'runbangla24' ),
+            'type' => 'text',
+            'section' => 'my_custom_logo_settings',
+            'settings' => 'my_custom_logo_height',
+          )
+        );
+      
+      }
+      
+      add_action( 'customize_register', 'my_customizer_logo_settings' );
+      
+      // Add theme support for custom logo with the new settings
+      add_theme_support(
+        'custom-logo',
+        array(
+          'height' => get_theme_mod( 'my_custom_logo_height' ),
+          'width' => get_theme_mod( 'my_custom_logo_width' ),
+          'flex-width' => true,
+          'flex-height' => true,
+          'unlink-homepage-logo' => true,
+        )
+      );
+    //   logo end
 
     // activing assects style and js
     function runbangla24_assets() {

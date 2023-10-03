@@ -3,6 +3,16 @@
     load_theme_textdomain('runbangla24', get_template_directory().'/languages');
 
     // dynamic site/page title
+    function my_custom_menu() {
+        register_nav_menus(
+            array(
+                'my-custom-menu' => _( 'My Custom Menu' ),
+                'my-custom-menu-2' =>_('My Second Custom Menu')
+            )
+        );
+    }
+    add_action( 'init', 'my_custom_menu' );
+    
     
     function runbangla24_setup(){
         add_theme_support('title-tag');

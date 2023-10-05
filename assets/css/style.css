@@ -9908,3 +9908,7 @@ h6,
           100% { transform: rotate(360deg); }
         }
 
+/* %%%%%%%%%%%%%%%%%%Footer%%%%%%%%%%%%%%%%%%% */
+footer{
+  background-color: #006A4E !important;
+}

@@ -149,8 +149,32 @@
     }
     add_filter( 'excerpt_length', 'runbangla24_custom_excerpt_length', 999 );
 
+    // @@@@@@@@@@@@@@@@@@@@@PageCustomization@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-    // register sideber 
+    function theme_customize_register($wp_customize) {
+      // Add a section for Notice board
+      $wp_customize->add_section('theme_options', array(
+          'title' => __('Notice Board', 'runbangla24'),
+          'priority' => 200,
+      ));
+  
+      // Add a setting for the title
+      $wp_customize->add_setting('custom_title', array(
+          'default' => __('নোটিস-বার্তা', 'runbangla24'),
+          'sanitize_callback' => 'sanitize_text_field',
+      ));
+  
+      // Add a control to enter the title
+      $wp_customize->add_control('custom_title', array(
+          'label' => __('Custom Title', 'runbangla24'),
+          'section' => 'theme_options',
+          'type' => 'text',
+      ));
+  }
+  add_action('customize_register', 'theme_customize_register');
+
+
+    //@@@@@@@@@@@@@@@@@@@@@@@ register sideber @@@@@@@@@@@@@@@@@@@@@
     function runbangla24_sidebar(){
         // main sidebar
         register_sidebar(array(
@@ -164,3 +188,62 @@
         ));
     }
     add_action('widgets_init', 'runbangla24_sidebar');
+
+
+    //  #####################Register Footer##########################
+    function runbangla24_footer_widgets() {
+      // right sidebar 
+      register_sidebar(array(
+          'name' => 'right sidebar',
+          'id' => 'right-sidebar',
+          'description' => 'This is the first footer widget area.', 'runbangla24',
+          'before_widget' => '<div class="widget">',
+          'after_widget' => '</div>',
+          'before_title' => '<h3 class="widget-title">',
+          'after_title' => '</h3>',
+        ));
+      
+      register_sidebar(array(
+        'name' => 'Footer Widget 1',
+        'id' => 'footer-widget-1',
+        'description' => 'This is the first footer widget area.', 'runbangla24',
+        'before_widget' => '<div class="widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+      ));
+    
+      register_sidebar(array(
+        'name' => 'Footer Widget 2',
+        'id' => 'footer-widget-2',
+        'description' => 'This is the second footer widget area.','runbangla24',
+        'before_widget' => '<div class="widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+      ));
+
+      register_sidebar(array(
+        'name' => 'Footer Widget 3',
+        'id' => 'footer-widget-3',
+        'description' => 'This is the third footer widget area.','runbangla24',
+        'before_widget' => '<div class="widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+      ));
+
+      // fotter widget 4 
+      register_sidebar(array(
+        'name' => 'Footer Widget 4',
+        'id' => 'footer-widget-4',
+        'description' => 'This is the forth footer widget area.','runbangla24',
+        'before_widget' => '<div class="widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+      ));
+      // fotter copyright 
+    
+    }
+    add_action('widgets_init', 'runbangla24_footer_widgets');

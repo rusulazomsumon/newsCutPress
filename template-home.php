@@ -263,7 +263,7 @@
                                 }
                             ?>
                         </div>
-                        <!-- #####33333333333333333333######## leatest soprts  news ########333333333333333333333333#### -->
+                        <!-- #####33333333333333333333######## leatest business  news ########333333333333333333333333#### -->
                         <div class="col-lg-4">
                             <div class="section-title">
                                 <h5 class="m-0 text-uppercase font-weight-bold">বাণিজ্য-বার্তা</h5>
@@ -313,146 +313,9 @@
                     </div>
                 </div>
                 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-                        @@@@@@@@@@@@@@@@@@@@@@@@@@@@ Left Sidebar @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+                        @@@@@@@@@@@@@@@@@@@@@@@@@@@@ Right Sidebar @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
                 <div class="col-lg-4">
-                    <div class="mb-3">
-                        <!-- ************** leatest single news international *********** -->
-                        <div class="col-lg-12">
-                            <div class="section-title">
-                                <h4 class="m-0 text-uppercase font-weight-bold" >আন্তর্জাতিক</h4>
-                            </div>
-                            <?php 
-                                $args = array(
-                                    'post_type'     =>  'post',
-                                    'order'         =>  'DSC',
-                                    'category_name' =>  'আন্তর্জাতিক',
-                                    'post_per_page' =>  2
-                                );
-                                $query = new WP_Query($args);
-                                while($query -> have_posts()){
-                                    $query -> the_post();
-                            ?>
-                            <!-- single post markup -->
-                            <div class="position-relative mb-3">
-                                <img class="img-fluid w-100" src="<?php the_post_thumbnail_url(); ?>"  style="object-fit: cover;">
-                                <div class="bg-white border border-top-0 p-4">
-                                    <div class="mb-2">
-                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                            href="">
-                                            <span>
-                                                <?php  
-                                                    $catgs = get_the_category();
-                                                    foreach($catgs as $catg){
-                                                        echo $catg -> name." ";
-                                                    }
-                                                ?>
-                                            </span>
-                                        </a>
-                                        <a class="text-body" href="#"><small><?php the_date(); ?></small></a>
-                                    </div>
-                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                    <p class="m-0"><?php the_excerpt() ?></p>
-                                </div>
-                            </div>
-                            <!-- single post markup: end -->
-                                <!-- end of loop -->
-                            <?php
-                                }
-                            ?>
-                        </div>
-                    </div>
-                    <!-- Social Follow End -->
-
-                    <!-- Ads Start -->
-                    <div class="mb-3">
-                        <div class="section-title mb-0">
-                        </div>
-                        <div class="bg-white text-center border border-top-0 p-3">
-                            <a href=""><img class="img-fluid" src="https://doiniksongbadchitro.com/wp-content/uploads/2023/06/728x90-rasipm.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <!-- Ads End -->
-
-                    <!-- Popular News Start -->
-                    <div class="mb-3">
-                        <div class="section-title mb-0">
-                            <h4 class="m-0 text-uppercase font-weight-bold">পাঠকপ্রিয়</h4>
-                        </div>
-                        <div class="bg-white border border-top-0 p-3">
-                        <?php 
-                    $args = array(
-                        'post_type'     =>  'post',
-                        'order'         =>  'ASC',
-                        'post_per_page' =>  5
-                    );
-                    $query = new WP_Query($args);
-                    while($query -> have_posts()){
-                        $query -> the_post();
-                        ?>
-                        <!-- single post markup -->
-                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img class="img-fluid" src="<?php the_post_thumbnail_url(); ?>" alt="" width="100" height="70">
-                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                    <div class="mb-2">
-                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" 
-                                            href="">
-                                            <span>
-                                                <?php  
-                                                    $catgs = get_the_category();
-                                                    foreach($catgs as $catg){
-                                                        echo $catg -> name." ";
-                                                    }
-                                                ?>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                </div>
-                            </div>
-                        <!-- single post markup: end -->
-                        <!-- end of loop -->
-                    <?php
-                        }
-                    ?>
-                        </div>
-                    </div>
-                    <!-- Popular News End -->
-
-                    <!-- Newsletter Start -->
-                    <div class="mb-3">
-                        <div class="bg-white text-center border border-top-0 p-3">
-                            <p>নিয়মিত সর্বশেষ সংবাদ পেতে ইমেল দিয়ে সাবস্ক্রাইব করুন!</p>
-                            <div class="input-group mb-2" style="width: 100%;">
-                                <input type="text" class="form-control form-control-lg" placeholder="Your Email">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary font-weight-bold px-3">নিবন্ধন করুন</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Newsletter End -->
-
-                    <!-- Tags Start -->
-                    <!-- <div class="mb-3">
-                        <div class="section-title mb-0">
-                            <h4 class="m-0 text-uppercase font-weight-bold">Tags</h4>
-                        </div>
-                        <div class="bg-white border border-top-0 p-3">
-                            <div class="d-flex flex-wrap m-n1">
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Corporate</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Health</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Education</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Science</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Foods</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Travel</a>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- Tags End -->
+                    <?php dynamic_sidebar('right-sidebar'); ?>
                 </div>
             </div>
             <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%Body News Row 2%%%%%%%%%%%%%%%%%%%%% -->

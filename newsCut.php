@@ -142,7 +142,7 @@
               <img src="./img/imageskjk.jpg" alt="Image 1">
             </div> -->
             <div class="image-section">
-              <img style="width: 100%;" src="https://doiniksongbadchitro.com/wp-content/uploads/2023/08/WhatsApp_Image_2023-08-01_at_13.02.00-removebg-preview.png" alt="Image 2">
+              <img id="logo" style="width: 100%;" src="https://doiniksongbadchitro.com/wp-content/uploads/2023/08/WhatsApp_Image_2023-08-01_at_13.02.00-removebg-preview.png" alt="Image 2">
             </div>
             <!-- <div class="image-section">
               <img  style=" margin-left: 150px;" src="./img/mujib100.png" alt="Image 3">
@@ -164,9 +164,9 @@
         <div class="news">
             <h1 class="title"><?php the_title(); ?></h1>
             <div class="content">
-              <div class="image-wrapper">
+              <!-- <div class="image-wrapper">
                 <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" width="100%" height="auto">
-              </div>
+              </div> -->
               
               
               <hr>
@@ -188,11 +188,11 @@
 
     </div>
     
-    <button id="screenshot-btn">@</button>
+    <!-- <button id="screenshot-btn">@</button> -->
     <!-- <p class="myAdd">মাত্র <b> ২২২২ টাকায় </b> যে কোন ওয়েবসাইট বানাতে, যোগাযোগঃ ০১৮৮২৮৩৪০৭১</p> -->
 
     <script>
-        document.getElementById('screenshot-btn').addEventListener('click', function() {
+        document.getElementById('logo').addEventListener('click', function() {
         html2canvas(document.body).then(function(canvas) {
         // Create a temporary link
         var link = document.createElement('a');

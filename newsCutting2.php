@@ -146,7 +146,7 @@
               <img src="./img/imageskjk.jpg" alt="Image 1">
             </div> -->
             <div class="image-section">
-              <img style="width: 100%;" src="https://doiniksongbadchitro.com/wp-content/uploads/2023/08/WhatsApp_Image_2023-08-01_at_13.02.00-removebg-preview.png" alt="Image 2">
+              <img id="logo" style="width: 100%;" src="https://doiniksongbadchitro.com/wp-content/uploads/2023/08/WhatsApp_Image_2023-08-01_at_13.02.00-removebg-preview.png" alt="Image 2">
             </div>
             <!-- <div class="image-section">
               <img  style=" margin-left: 150px;" src="./img/mujib100.png" alt="Image 3">
@@ -201,7 +201,7 @@
 
     <script>
         // if double click on body ,then this action will run
-        document.body.addEventListener('dblclick', function() {
+        document.getElementById('logo').addEventListener('click', function() {
         html2canvas(document.body).then(function(canvas) {
         // Create a temporary link
         var link = document.createElement('a');
